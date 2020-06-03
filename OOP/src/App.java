@@ -12,27 +12,33 @@ public class App {
         // System.out.println("1. " + item.getNama() + " || " + item.getHarga() + " || "
         // + item.getStock());
         // });
-        menuUtama();
+        // menuUtama();
         // tambahBuah();
         // tampilListBuah();
+
+        Teman teman = new Teman();
+
+        teman.bicara();
+        System.out.println(teman.jumlahJri);
+
     }
 
-    public static void menuUtama() {
-        while (true) {
-            System.out.println("================= MENU =================");
-            System.out.println("1. Tambah buah");
-            System.out.println("2. List buah");
-            System.out.println("3. Exit");
-            System.out.print("Pilihan menu yang dipilih: ");
-            String menuOption = scanner.next();
+    // public static void menuUtama() {
+    // while (true) {
+    // System.out.println("================= MENU =================");
+    // System.out.println("1. Tambah buah");
+    // System.out.println("2. List buah");
+    // System.out.println("3. Exit");
+    // System.out.print("Pilihan menu yang dipilih: ");
+    // String menuOption = scanner.next();
 
-            if (menuOption.equals("1")) {
-                Menu.tambahBuah();
-            } else if (menuOption.equals("2")) {
-                Menu.tampilListBuah();
-            } else {
-                break;
-            }
-        }
-    }
+    // if (menuOption.equals("1")) {
+    // Menu.tambahBuah();
+    // } else if (menuOption.equals("2")) {
+    // Menu.tampilListBuah();
+    // } else {
+    // break;
+    // }
+    // }
+    // }
 }

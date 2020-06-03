@@ -1,18 +1,21 @@
 package CicilanCalculator.src;
 
 public class Tampilan {
+    private Hitungan calculator;
 
-    public static void tampilBayaran(double bayaranPerBulan) {
-        System.out.println("============================== PEMBAYARAN SETIAP BULAN ==============================");
-        Currency.currencyFormat(bayaranPerBulan);
-
+    public Tampilan(Hitungan calculator) {
+        this.calculator = calculator;
     }
 
-    public static void tampilanSisaBayaran(int durasiCicilan, double sisaBayaran, double bayaranPerBulan) {
+    public void tampilBayaran() {
+        System.out.println("============================== PEMBAYARAN SETIAP BULAN ==============================");
+        Currency.currencyFormat(calculator.hitungBayaranPerBulan());
+    }
+
+    public void tampilanSisaBayaran() {
         System.out.println("============================== SISA BAYARAN SETIAP BULAN ==============================");
-        for (int i = 0; i < durasiCicilan * App.BULAN_DALAM_TAHUN; i++) {
-            sisaBayaran -= bayaranPerBulan;
-            Currency.currencyFormat(sisaBayaran);
+        for (int bulan = 1; bulan <= calculator.durasiCicilan() * App.BULAN_DALAM_TAHUN; bulan++) {
+            Currency.currencyFormat(calculator.hitungSisaBayaranPerBulan(bulan));
         }
     }
 
